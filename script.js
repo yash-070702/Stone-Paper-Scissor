@@ -17,11 +17,20 @@ computer.innerHTML=computer_score;
 
 stone.addEventListener("click",()=>{
     footer.style.bottom="-17%";
+
+    stone.disabled=true;
+    scissors.disabled=true;
+    paper.disabled=true;
+    
+    paper.style.opacity="0.5";
+    scissors.style.opacity="0.5";
+
     let rand=Math.ceil(Math.random()*3);
     console.log(rand);
 
     my_choice.style.backgroundImage = " url('./images/rock.png')";
     result.innerHTML=`Stone`;
+    obtained.innerHTML="Loading...";
     comp_choice.style.backgroundImage="url('./images/loading-gif.gif')";
 result_display.innerHTML="";
 result_display.style.backgroundColor="";
@@ -55,18 +64,33 @@ result_display.style.backgroundColor="";
             }
             user.innerHTML=user_score;
         computer.innerHTML=computer_score;
+    
+        stone.disabled=false;
+        paper.disabled=false;
+    scissors.disabled=false;
+
+    paper.style.opacity="1";
+    scissors.style.opacity="1";
     },500);
     
 });
 
 paper.addEventListener("click",()=>{
     footer.style.bottom="-17%";
+    stone.disabled=true;
+    scissors.disabled=true;
+    paper.disabled=true;
+
+    stone.style.opacity="0.5";
+    scissors.style.opacity="0.5";
+
     let rand=Math.ceil(Math.random()*3);
     console.log(rand);
     comp_choice.style.backgroundImage="url('./images/loading-gif.gif')";
 
     my_choice.style.backgroundImage = " url('./images/paper.png')";
     result.innerHTML=`Paper`;
+    obtained.innerHTML="Loading...";
     result_display.innerHTML="";
 result_display.style.backgroundColor="";
 
@@ -99,6 +123,13 @@ result_display.style.backgroundColor="";
             }
             user.innerHTML=user_score;
         computer.innerHTML=computer_score;
+
+        stone.disabled=false;
+        paper.disabled=false;
+    scissors.disabled=false;
+
+    stone.style.opacity="1";
+    scissors.style.opacity="1";
     },500);
 
     
@@ -106,9 +137,17 @@ result_display.style.backgroundColor="";
 
 scissors.addEventListener("click",()=>{
     footer.style.bottom="-17%";
+    stone.disabled=true;
+    scissors.disabled=true;
+    paper.disabled=true;
+
+    stone.style.opacity="0.5";
+    paper.style.opacity="0.5";
+
     let rand=Math.ceil(Math.random()*3);
     console.log(rand);
     result.innerHTML=`Scissors`;
+    obtained.innerHTML="Loading...";
     result_display.innerHTML="";
     result_display.style.backgroundColor="";
     my_choice.style.backgroundImage = "url('./images/scissors.png')";
@@ -142,6 +181,13 @@ scissors.addEventListener("click",()=>{
             }
             user.innerHTML=user_score;
         computer.innerHTML=computer_score;
+
+       stone.disabled=false;
+        paper.disabled=false;
+    scissors.disabled=false;
+
+    stone.style.opacity="1";
+    paper.style.opacity="1";
     },500);
     
 });
